@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rectangle</title>
+</head>
+<body>
+<canvas id="myCanvas" width="1368px" height="768px" style="border:1px solid #d3d3d3;"></canvas><br>
+<p id="result"></p>
+<script>
+    function rectangle(leght1,width1) {
+        this.length1=parseInt(leght1);
+        this.width1=parseInt(width1);
+        this.setRectangle=function (leght1,width1) {
+            this.length1=leght1;
+            this.width1=width1;
+        }
+        this.getLenght1=function () {
+            return this.length1;
+        }
+        this.getWriter1=function () {
+            return this.width1;
+        }
+        this.setLenght1=function (leght1) {
+            this.length1=leght1;
+        }
+        this.setWidth1=function (width1) {
+            this.width1=width1;
+        }
+        this.printArenal=function () {
+            return this.length1*this.width1;
+        }
+        this.printPerimeter=function () {
+            return 2*(this.length1+this.width1);
+        }
+    }
+    let ABCD=new rectangle(50,20);
+    let length1=ABCD.getLenght1();
+    let width1=ABCD.getWriter1();
+    document.getElementById("result").innerText="Arenal="+ABCD.printArenal()+"Perimeter="+ABCD.printPerimeter();
+    document.getElementById("result").innerHTML+="<br>";
+    ABCD.setRectangle(600,200);
+     length1=ABCD.getLenght1();
+     width1=ABCD.getWriter1();
+     document.getElementById("result").innerText+="Arenal="+ABCD.printArenal()+"Perimeter="+ABCD.printPerimeter();
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    ctx.beginPath();
+    ctx.rect(20, 20, length1, width1);
+    ctx.stroke();
+    var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+ctx.font = "30px Arial";
+ctx.fillText("Hinh chu nhat ne :D",10,50);
+</script>
+</body>
+</html>
